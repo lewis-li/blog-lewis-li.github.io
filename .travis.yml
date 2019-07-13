@@ -1,0 +1,55 @@
+language: go
+
+# Specify which branches to build using a safelist
+# 分支白名单限制: 只有hugo分支的提交才会触发构建
+# branches:
+#   only:
+#     - hugo 
+
+
+addons:
+  ssh_known_hosts:
+  - github.com
+
+# travis clone仓库时会使用--recursive参数,如果子模块是ssh协议时,会导致需要私钥而执行失败
+# 先取消对子模块的自动克隆,在before_install时自行处理
+git:
+  submodules: false
+
+before_install:
+  - git config --global user.name "lewis.li"
+  - git config --global user.email "lewis_li@163.com"
+  - git submodule update --init --recursive
+
+install:
+# 安装最新的hugo
+  # - go get github.com/spf13/hugo 
+  - go get github.com/gohugoio/hugo
+
+script:
+# 运行hugo命令
+  - hugo -d ./public/
+
+after_success:
+  - cd ./public
+  - pwd
+  - ls
+  - git remote rm origin
+  - git remote add origin https://lewis-li:${GITHUB_TOKEN}@github.com/lewis-li/lewis-li.github.io.git 
+  - git status
+  - git add .
+  - git status
+  - git commit -m "rebuilding site `date`"
+  - git status
+  - git push origin master --force
+  # - git push --force https://lewis-li:${GITHUB_TOKEN}@github.com/lewis-li/lewis-li.github.io.git master
+  - cd ..
+
+# after_success:
+  # - MESSAGE=$(git log --format=%B -n 1 $TRAVIS_COMMIT)
+  # - cd public
+  # # - git init
+  # - git remote add origin https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/lewis-li/lewis-li.github.io.git
+  # - git add .
+  # - git commit -m ${MESSAGE}
+  # - git push origin master -f
