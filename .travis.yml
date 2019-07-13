@@ -42,10 +42,11 @@ after_success:
   - git status
   - git commit -m "rebuilding site `date`"
   - git status
+  - cd ..
   # - git push origin master --force
   # - git push --force https://lewis-li:${GITHUB_TOKEN}@github.com/lewis-li/lewis-li.github.io.git master
   - git subtree push --prefix=public https://lewis-li:${GITHUB_TOKEN}@github.com/lewis-li/lewis-li.github.io.git master master
-  - cd ..
+  
 
 # after_success:
   # - MESSAGE=$(git log --format=%B -n 1 $TRAVIS_COMMIT)
