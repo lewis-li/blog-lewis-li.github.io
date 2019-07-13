@@ -44,7 +44,7 @@ after_success:
   - git status
   # - git push origin master --force
   # - git push --force https://lewis-li:${GITHUB_TOKEN}@github.com/lewis-li/lewis-li.github.io.git master
-  - git subtree push --prefix=public --force https://lewis-li:${GITHUB_TOKEN}@github.com/lewis-li/lewis-li.github.io.git master master
+  - git subtree push --prefix=public https://lewis-li:${GITHUB_TOKEN}@github.com/lewis-li/lewis-li.github.io.git master master
   - cd ..
 
 # after_success:
