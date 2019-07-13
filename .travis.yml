@@ -20,6 +20,7 @@ before_install:
   - git config --global user.name "lewis.li"
   - git config --global user.email "lewis_li@163.com"
   - git submodule update --init --recursive
+  - git subtree add --prefix=public https://github.com/lewis-li/lewis-li.github.io.git master --squash
 
 install:
 # 安装最新的hugo
@@ -34,15 +35,16 @@ after_success:
   - cd ./public
   - pwd
   - ls
-  - git remote rm origin
-  - git remote add origin https://lewis-li:${GITHUB_TOKEN}@github.com/lewis-li/lewis-li.github.io.git 
+  # - git remote rm origin
+  # - git remote add origin https://lewis-li:${GITHUB_TOKEN}@github.com/lewis-li/lewis-li.github.io.git 
   - git status
   - git add .
   - git status
   - git commit -m "rebuilding site `date`"
   - git status
-  - git push origin master --force
+  # - git push origin master --force
   # - git push --force https://lewis-li:${GITHUB_TOKEN}@github.com/lewis-li/lewis-li.github.io.git master
+  - git subtree push --prefix=public --force https://lewis-li:${GITHUB_TOKEN}@github.com/lewis-li/lewis-li.github.io.git master master
   - cd ..
 
 # after_success:
