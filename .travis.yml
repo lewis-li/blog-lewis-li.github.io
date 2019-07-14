@@ -42,6 +42,7 @@ after_success:
   - git status
   - git commit -m "rebuilding site `date`"
   - git status
+  - git subtree split --rejoin --prefix=public HEAD
   # - git push origin master --force
   # - git push --force https://lewis-li:${GITHUB_TOKEN}@github.com/lewis-li/lewis-li.github.io.git master
   - git subtree push --prefix=public https://lewis-li:${GITHUB_TOKEN}@github.com/lewis-li/lewis-li.github.io.git master 
