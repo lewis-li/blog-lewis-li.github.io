@@ -30,28 +30,15 @@ install:
 
 script:
 # 运行hugo命令
-  - hugo -d ./public/
+  # - hugo -d ./public/
 
 after_success:
   - pwd
   - ls
-  # - git remote rm origin
-  # - git remote add origin https://lewis-li:${GITHUB_TOKEN}@github.com/lewis-li/lewis-li.github.io.git 
   - git status
-  - git add public
+  # - git add public
   - git status
-  - git commit -m "rebuilding site `date`"
+  # - git commit -m "rebuilding site `date`"
   - git status
-  - git subtree split --rejoin --prefix=public HEAD
-  # - git push origin master --force
-  # - git push --force https://lewis-li:${GITHUB_TOKEN}@github.com/lewis-li/lewis-li.github.io.git master
-  - git subtree push --prefix=public https://lewis-li:${GITHUB_TOKEN}@github.com/lewis-li/lewis-li.github.io.git master 
-
-# after_success:
-  # - MESSAGE=$(git log --format=%B -n 1 $TRAVIS_COMMIT)
-  # - cd public
-  # # - git init
-  # - git remote add origin https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/lewis-li/lewis-li.github.io.git
-  # - git add .
-  # - git commit -m ${MESSAGE}
-  # - git push origin master -f
+  # - git subtree split --rejoin --prefix=public HEAD
+  # - git subtree push --prefix=public https://lewis-li:${GITHUB_TOKEN}@github.com/lewis-li/lewis-li.github.io.git master 
