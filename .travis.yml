@@ -19,7 +19,7 @@ git:
 before_install:
   - git config --global user.name "lewis.li"
   - git config --global user.email "lewis_li@163.com"
-  - git subtree add --prefix=themes/anank https://github.com/budparr/gohugo-theme-ananke.git master --squash
+  # - git subtree add --prefix=themes/anank https://github.com/budparr/gohugo-theme-ananke.git master --squash
   # - git subtree add --prefix=public https://github.com/lewis-li/lewis-li.github.io.git master --squash
 
 install:
