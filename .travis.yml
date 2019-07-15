@@ -19,8 +19,8 @@ git:
 before_install:
   - git config --global user.name "lewis.li"
   - git config --global user.email "lewis_li@163.com"
-  - git subtree add --prefix=themes/anank https://github.com/budparr/gohugo-theme-ananke.git master
-  # - git subtree add --prefix=public https://github.com/lewis-li/lewis-li.github.io.git master
+  - git subtree add --prefix=themes/anank https://github.com/budparr/gohugo-theme-ananke.git master --squash
+  # - git subtree add --prefix=public https://github.com/lewis-li/lewis-li.github.io.git master --squash
 
 install:
 # 安装最新的hugo
@@ -32,12 +32,12 @@ script:
   # - hugo -d ./public/
 
 after_success:
-  - pwd
-  - ls
-  - git status
-  # - git add public
-  - git status
-  # - git commit -m "rebuilding site `date`"
-  - git status
-  # - git subtree split --rejoin --prefix=public HEAD
-  # - git subtree push --prefix=public https://lewis-li:${GITHUB_TOKEN}@github.com/lewis-li/lewis-li.github.io.git master 
+  - cd public
+  - git init
+  # - git config user.name "yourname"
+  # - git config user.email "your email"
+  - git remote add origin https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/lewis-li/lewis-li.github.io.git
+  - git add .
+  - git commit -m "rebuilding site `date`"
+  - git push origin master -f
+  - cd ..
