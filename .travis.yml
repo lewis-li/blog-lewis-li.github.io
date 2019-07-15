@@ -36,7 +36,7 @@ after_success:
   - git init
   # - git config user.name "yourname"
   # - git config user.email "your email"
-  - git remote add origin https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/lewis-li/lewis-li.github.io.git
+  - git remote add origin https://lewis-li:${GITHUB_TOKEN}@github.com/lewis-li/lewis-li.github.io.git
   - git add .
   - git commit -m "rebuilding site `date`"
   - git push origin master -f
