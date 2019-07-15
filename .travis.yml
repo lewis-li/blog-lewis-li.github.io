@@ -29,6 +29,7 @@ install:
 
 script:
 # 运行hugo命令
+  - mkdir public
   - hugo -d ./public/
 
 after_success:
