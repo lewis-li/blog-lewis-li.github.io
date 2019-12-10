@@ -21,36 +21,22 @@ before_install:
   - git config --global user.email "lewis_li@163.com"
   - git submodule update --init --recursive
   - git subtree pull --prefix=public https://github.com/lewis-li/lewis-li.github.io.git master --squash
-  # - git subtree add --prefix=public https://github.com/lewis-li/lewis-li.github.io.git master --squash
-
 install:
 # 安装最新的hugo
-  # - go get github.com/spf13/hugo 
-  - go get github.com/gohugoio/hugo
+  - go get github.com/spf13/hugo 
+  # - go get github.com/gohugoio/hugo
 
 script:
 # 运行hugo命令
   - hugo -d ./public/
 
 after_success:
-  - pwd
-  - ls
-  # - git remote rm origin
-  # - git remote add origin https://lewis-li:${GITHUB_TOKEN}@github.com/lewis-li/lewis-li.github.io.git 
-  - git status
-  - git add public
-  - git status
+  - cd public
+  - git init
+  # - git config user.name "yourname"
+  # - git config user.email "your email"
+  - git remote add origin https://lewis-li:${GITHUB_TOKEN}@github.com/lewis-li/lewis-li.github.io.git
+  - git add .
   - git commit -m "rebuilding site `date`"
-  - git status
-  # - git push origin master --force
-  # - git push --force https://lewis-li:${GITHUB_TOKEN}@github.com/lewis-li/lewis-li.github.io.git master
-  - git subtree push --prefix=public https://lewis-li:${GITHUB_TOKEN}@github.com/lewis-li/lewis-li.github.io.git master 
-
-# after_success:
-  # - MESSAGE=$(git log --format=%B -n 1 $TRAVIS_COMMIT)
-  # - cd public
-  # # - git init
-  # - git remote add origin https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/lewis-li/lewis-li.github.io.git
-  # - git add .
-  # - git commit -m ${MESSAGE}
-  # - git push origin master -f
+  - git push origin master -f
+  - cd ..
