@@ -28,6 +28,7 @@ before_install:
   - go version
   - git subtree add --prefix=public https://github.com/lewis-li/lewis-li.github.io.git master --squash
   - npm install
+  -ls
   - git submodule update --init --recursive
   
 install:
