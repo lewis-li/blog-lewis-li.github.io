@@ -44,7 +44,8 @@ before_install:
 install:
 # 安装最新的hugo
   # - go get github.com/spf13/hugo
-  - go get github.com/gohugoio/hugo -t extended
+  - go get github.com/gohugoio/hugo
+  - snap install hugo --channel=extended
   - hugo version
 
 script:
