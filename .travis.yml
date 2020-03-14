@@ -1,9 +1,21 @@
-language: 
-  - go
-  - node_js
+language: go
+
+env:
+  global:
+    - CACHE_NAME=${TRAVIS_ARCH}
+    - GO111MODULE=on
+    - GOPROXY=https://proxy.golang.org
+    - HUGO_BUILD_TAGS=extended
 
 go:
+  - "1.13.8"
+  - "1.14"
   - master
+
+cache:
+  directories:
+    - $HOME/gopath/pkg/mod
+    - $HOME/.cache/go-build
 
 # Specify which branches to build using a safelist
 # 分支白名单限制: 只有hugo分支的提交才会触发构建
