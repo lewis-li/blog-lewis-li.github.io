@@ -38,7 +38,8 @@ install:
 
 script:
 # 运行hugo命令
-  - hugo -d ./public/
+  # - hugo -d ./public/
+  - hugo -D
 
 after_success:
   - cd public
