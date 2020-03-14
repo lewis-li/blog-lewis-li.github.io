@@ -8,8 +8,6 @@ env:
     - HUGO_BUILD_TAGS=extended
 
 go:
-  - "1.13.8"
-  - "1.14"
   - master
 
 cache:
@@ -46,7 +44,7 @@ before_install:
 install:
 # 安装最新的hugo
   # - go get github.com/spf13/hugo
-  - go get github.com/gohugoio/hugo
+  - go get github.com/gohugoio/hugo -t extended
   - hugo version
 
 script:
