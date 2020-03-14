@@ -1,4 +1,6 @@
-language: go
+language: 
+- go
+- node_js
 
 # Specify which branches to build using a safelist
 # 分支白名单限制: 只有hugo分支的提交才会触发构建
@@ -23,7 +25,8 @@ before_install:
   - git subtree pull --prefix=public https://github.com/lewis-li/lewis-li.github.io.git master --squash
 install:
 # 安装最新的hugo
-  - go get github.com/spf13/hugo 
+  - go get github.com/spf13/hugo
+  - npm install 
   # - go get github.com/gohugoio/hugo
 
 script:

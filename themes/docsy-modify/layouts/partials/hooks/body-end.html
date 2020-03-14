@@ -1,0 +1,31 @@
+{{ with .Site.Params.algolia_docsearch }}
+<!-- scripts for algolia docsearch -->
+{{ end }}
+
+<!-- 统计 -->
+<script type="text/javascript" src="//js.users.51.la/20688077.js"></script>
+
+<!-- valine 评论 -->
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    window.addEventListener('load', function () {
+        new Valine({
+            el: '#vcomments',
+            verify: true,
+            appId: '{{ .Site.Params.valine.app_id }}',
+            appKey: '{{ .Site.Params.valine.app_key }}',
+            placeholder: "说点什么吧",
+            avatar: "mp",
+            visitor: true,
+        })
+    })
+
+    // 进度条
+    if (typeof $ !== 'undefined') {
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                $(".top-scroll-bar").attr("style", "width: " + ($(this).scrollTop() / ($(document).height() - $(this).height()) * 100) + "%; display: block;");
+            });
+        });
+    }
+</script>

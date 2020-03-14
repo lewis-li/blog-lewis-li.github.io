@@ -1,32 +1,67 @@
 baseURL = "http://xianjun.me"
-languageCode = "en-us"
-title = "lixianjun blog"
-theme = "ananke"
+languageCode = "zh"
+defaultContentLanguage = "zh"
+title = "贤军的博客"
+theme = ["docsy-modify", "docsy"]
 
-MetaDataFormat = "toml"
-DefaultContentLanguage = "en"
-SectionPagesMenu = "main"
-Paginate = 3 # this is set low for demonstrating with dummy content. Set to a higher number
-googleAnalytics = ""
-enableRobotsTXT = true
+hasCJKLanguage = true
 
-[sitemap]
-  changefreq = "monthly"
-  priority = 0.5
-  filename = "sitemap.xml"
+[taxonomies]
+tag = "tags"
+category = "categories"
+series = "series"
 
 [params]
-  favicon = ""
-  description = "The last theme you'll ever need. Maybe."
-  facebook = ""
-  twitter = ""
-  instagram = ""
-  youtube = ""
-  github = "//github.com/lewis-li"
-  gitlab = ""
-  linkedin = ""
-  mastodon = ""
-  # choose a background color from any on this page: http://tachyons.io/docs/themes/skins/ and preface it with "bg-"
-  background_color_class = "bg-black"
-  featured_image = "/images/gohugo-default-sample-hero-image.jpg"
-  recent_posts_number = 2
+copyright = "lewis.li"
+[params.powered_by]
+name = "Hugo"
+link = "https://gohugo.io/"
+[params.theme]
+name = "Docsy"
+link = "https://github.com/google/docsy"
+
+[params.valine]
+app_id = "6znJ0TxMsRwKyPaHJYdnT9pl-gzGzoHsz"
+app_key = "7gfnKDrBJq3vXKrYqHCSLBBm"
+
+[params.links]
+[[params.links.developer]]
+name = "GitHub"
+url = "https://github.com/lewis-li"
+icon = "fab fa-github"
+desc = "Development takes place here!"
+[[params.links.developer]]
+name = "Developer mailing list"
+url = "mailto:lewis_dev@163.com"
+icon = "fa fa-envelope"
+desc = "Discuss development issues around the project"
+[[params.links.developer]]
+name = "rss feed"
+url = "/index.xml"
+icon = "fa fa-rss"
+desc = "Discuss development issues around the project"
+
+[permalinks]
+  posts = "/:year/:month/:title/"
+
+[[params.social]]
+icon = "rss"
+icon_pack = "fa"
+link = "http://www.pzhao.org/zh/index.xml"
+
+[[menu.main]]
+name="博文"
+url="/blog"
+weight="1"
+[[menu.main]]
+name="推荐"
+url="/recommend"
+weight="2"
+[[menu.main]]
+name="文档"
+url="/docs"
+weight="2"
+[[menu.main]]
+name="关于"
+url="/about"
+weight="3"

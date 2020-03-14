@@ -1,0 +1,9 @@
+{{ define "main" }}
+<article class="markdown">
+  <h3> {{ lower .Title | T | title }}</h3>
+  {{ $taxonomies := index .Site.Taxonomies .Page.Type }}
+  {{ range $taxonomies }}
+    <div><a href="{{ .Page.Permalink }}">  {{ .Page.Title }} <sup>{{ .Count }}</sup></a></div>
+  {{ end }}
+</article>
+{{ end }}

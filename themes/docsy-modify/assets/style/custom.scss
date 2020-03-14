@@ -1,0 +1,102 @@
+// header
+header {
+    @media screen and (min-width: 768px) {
+        & {
+            position: fixed;
+        }
+    }
+    
+    background-color: #30638e;
+    padding-bottom: .4rem;
+    width: 100%;
+}
+
+.td-navbar {
+    position: static;
+}
+
+.td-main {
+    padding-bottom: 2rem;
+    @media screen and (min-width: 768px) {
+        padding-top: 6rem;
+    }
+}
+
+/* 分类样式 */
+.taxonomies {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    
+    &, ul {
+        display: inline;
+        list-style-type: none;
+        padding: 0;
+        padding-inline-start: 0;
+
+        li {
+            display: inline;
+        }
+    }
+}
+
+.term {
+    flex: content;
+}
+
+.tax {
+    margin-left: 0.2rem;
+    text-align: center;
+}
+
+/* 面包屑 */
+[aria-label="breadcrumb"], .breadcrumb, .breadcrumb-item{
+    display: inline-block;
+}
+
+.breadcrumb {
+    padding: .2rem 1rem !important;
+    padding-inline-start:0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    background-color: #efefef;
+}
+
+.breadcrumb-item {
+// 
+}
+
+.breadcrumb-item+.breadcrumb-item {
+    padding-left: .2rem;
+    // vertical-align: middle;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    padding-right: .2rem;
+    font-size: medium;
+    color: #30638e;
+    content: "/";
+}
+
+// 进度条
+.top-scroll-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: none;
+    width: 0;
+    height: 3px;
+    background: #28a745;
+}
+
+
+/* 测试用 */
+.test {
+    min-height: 250px;
+    background-color: red;
+    box-sizing: border-box;
+    padding-top: 220px;
+}

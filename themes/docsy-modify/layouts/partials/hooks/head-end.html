@@ -1,0 +1,10 @@
+{{ with .Site.Params.algolia_docsearch }}
+<!-- stylesheet for algolia docsearch -->
+{{ end }}
+
+{{/* 内容主体样式 */}}
+{{ $customSCSS := "style/custom.scss"}}
+{{ $customCSS := resources.Get $customSCSS | toCSS (dict "enableSourceMap" false) | postCSS | minify | fingerprint }}
+<link rel="preload" href="{{ $customCSS.RelPermalink }}" as="style">
+<link href="{{ $customCSS.RelPermalink }}" rel="stylesheet" integrity="{{ $customCSS.Data.integrity }}">
+<link href="//use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">

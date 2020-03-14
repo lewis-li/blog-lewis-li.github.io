@@ -1,0 +1,12 @@
+enableGitInfo = true
+
+offlineSearch = true
+
+[params.ui]
+footer_about_disable = true
+breadcrumb_disable = false
+
+[params.ui.feedback]
+enable = true
+
+# rss_sections = []

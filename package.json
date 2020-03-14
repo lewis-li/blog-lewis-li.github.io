@@ -1,0 +1,24 @@
+{
+  "name": "lewis-li.github.io-content",
+  "version": "1.0.0",
+  "description": "这里是 xianjun.me 博客网站的内容及代码，使用 [hugo](https://gohugo.io/) 搭建，主题使用了[docsy](https://github.com/google/docsy)",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^9.7.4",
+    "postcss-cli": "^7.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lewis-li/blog-lewis-li.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lewis-li/blog-lewis-li.github.io/issues"
+  },
+  "homepage": "https://github.com/lewis-li/blog-lewis-li.github.io#readme"
+}

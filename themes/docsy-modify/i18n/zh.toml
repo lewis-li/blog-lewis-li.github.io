@@ -1,0 +1,23 @@
+[footer_all_rights_reserved]
+other = "版权所有"
+
+[powered_by]
+other = "由{{ .name }}驱动"
+
+[theme]
+other = "主题"
+
+[based_on]
+other = "基于"
+
+[categories]
+other = "分类"
+
+[tags]
+other = "标签"
+
+[series]
+other = "系列"
+
+[blogs]
+other = "博文"

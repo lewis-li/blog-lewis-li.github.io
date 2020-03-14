@@ -1,0 +1,16 @@
+<ul class="meta taxonomies">
+    {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
+    {{ if $taxonomy }}
+    <li class="term">
+        <a href="#" class="badge badge-primary">{{- lower $taxonomyname | i18n -}}</a>
+        <ul>
+            {{ range $key, $value := $taxonomy }}
+            <li class="tax">
+                <a class=" badge badge-light" href="/{{ $taxonomyname }}/{{ $key }}">{{- $key -}}</a>
+            </li>
+            {{ end }}
+        </ul>
+    </li>
+    {{end}}
+    {{ end }}
+</ul>

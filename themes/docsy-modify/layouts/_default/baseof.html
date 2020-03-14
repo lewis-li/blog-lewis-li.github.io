@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="{{ .Site.Language.Lang }}" class="no-js">
+
+<head>
+  {{ partial "head.html" . }}
+</head>
+
+<body class="td-{{ .Kind }}">
+  <header>
+    {{ partial "navbar.html" . }}
+  </header>
+  <div class="container-fluid td-default td-outer">
+    <main role="main" class="td-main">
+      <div class="top-scroll-bar"></div>
+      <div class="info">
+        {{/* 面包屑 */}}
+        {{ partial "breadcrumb.html" . }}
+
+        {{/* 页面信息 */}}
+        {{ if (and .IsPage (not .Params.notsb)) }}
+        {{ partial "pageinfo.html" . }}
+        {{ end }}
+
+        <!-- id 将作为查询条件 -->
+        <span id="{{ .Page.RelPermalink }}" class="leancloud_visitors" data-flag-title="Your Article Title">
+          <span class="post-meta-item-text">访问数:</span>
+          <i class="leancloud-visitors-count"></i>
+        </span>
+      </div>
+
+      {{ block "main" . }}{{ end }}
+    </main>
+    {{/* 评论区 */}}
+    {{ partial "valine.html" . }}
+
+    {{ partial "footer.html" . }}
+  </div>
+  {{ partialCached "scripts.html" . }}
+</body>
+
+</html>

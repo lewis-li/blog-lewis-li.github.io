@@ -1,0 +1,8 @@
+<span class="post-time">
+    <i class="far fa-calendar-alt"></i> <time
+        datetime={{.Date.Format (.Site.Params.dateFormatToUse | default "2006-01-02") }}
+        itemprop="datePublished">{{ .Date.Format (.Site.Params.dateFormatToUse | default "2006-01-02") }}</time>
+</span>
+
+<i class="far fa-file-word"></i> <span class="post-word-count"> {{ .WordCount }} 字</span>
+<i class="far fa-clock"></i> <span class="more-meta"> {{ .ReadingTime }} 分钟 </span>
