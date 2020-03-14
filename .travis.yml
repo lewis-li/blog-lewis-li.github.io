@@ -23,7 +23,7 @@ before_install:
   - git config --global user.email "lewis_li@163.com"
   - npm install
   - git submodule update --init --recursive
-  - git subtree pull --prefix=public https://github.com/lewis-li/lewis-li.github.io.git master --squash
+  - git subtree add --prefix=public https://github.com/lewis-li/lewis-li.github.io.git master --squash
 install:
 # 安装最新的hugo
   - go get github.com/spf13/hugo
