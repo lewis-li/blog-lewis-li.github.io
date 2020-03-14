@@ -1,6 +1,9 @@
 language: 
-- go
-- node_js
+  - go
+  - node_js
+
+go:
+  - master
 
 # Specify which branches to build using a safelist
 # 分支白名单限制: 只有hugo分支的提交才会触发构建
