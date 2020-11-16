@@ -4,7 +4,8 @@
   "description": "这里是 xianjun.me 博客网站的内容及代码，使用 [hugo](https://gohugo.io/) 搭建，主题使用了[docsy](https://github.com/google/docsy)",
   "main": "index.js",
   "dependencies": {
-    "yargs-parser": ">=18.1.2"
+    "yargs-parser": ">=18.1.2",
+    "lodash": ">=4.17.19"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.4",
