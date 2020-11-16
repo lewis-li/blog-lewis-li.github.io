@@ -7,4 +7,6 @@
 {{ $customCSS := resources.Get $customSCSS | toCSS (dict "enableSourceMap" false) | postCSS | minify | fingerprint }}
 <link rel="preload" href="{{ $customCSS.RelPermalink }}" as="style">
 <link href="{{ $customCSS.RelPermalink }}" rel="stylesheet" integrity="{{ $customCSS.Data.integrity }}">
-<link href="//use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
+{{ $fontawesomeSCSS := "style/fontawesome/v5.9.0/css/all.css"}}
+{{ $fontawesomeSCSS := resources.Get $fontawesomeSCSS (dict "enableSourceMap" false) | postCSS | minify | fingerprint }}
+<link href="{{ $fontawesomeSCSS }}" rel="stylesheet">
