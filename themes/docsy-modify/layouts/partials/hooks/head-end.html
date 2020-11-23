@@ -3,11 +3,11 @@
 {{ end }}
 
 {{/* 内容主体样式 */}}
-{{ $customSCSS := "style/custom.scss"}}
+{{ $customSCSS := "css/custom.scss"}}
 {{ $customCSS := resources.Get $customSCSS | toCSS (dict "enableSourceMap" false) | postCSS | minify | fingerprint }}
 <link rel="preload" href="{{ $customCSS.RelPermalink }}" as="style">
 <link href="{{ $customCSS.RelPermalink }}" rel="stylesheet" integrity="{{ $customCSS.Data.integrity }}">
 
-{{ $fontawesomeSCSS := resources.Get "style/fontawesome/5.9.0/css/all.css" | minify | fingerprint }}
+{{ $fontawesomeSCSS := resources.Get "css/fontawesome/5.9.0/css/all.css" | minify | fingerprint }}
 <link rel="preload" href="{{ $fontawesomeSCSS }}" rel="stylesheet">
 <link href="{{ $fontawesomeSCSS.RelPermalink }}" rel="stylesheet" integrity="{{ $fontawesomeSCSS.Data.integrity }}">
