@@ -4,13 +4,13 @@ Date = 2019-12-07T15:27:43+08:00
 Categories = ["program"]
 # Keywords
 Tags = ["hugo"]
-Description = "以本网站 https://xianjun.me 为例，用hugo从头搭建一个网站"
+Description = "以本网站 https://xianjun.info 为例，用hugo从头搭建一个网站"
 Draft = false
 +++
 
 ## 概述
 
-以本网站 <https://xianjun.me> 为例，用hugo从头搭建一个网站
+以本网站 <https://xianjun.info> 为例，用hugo从头搭建一个网站
 
 ## 安装及预览
 
@@ -79,7 +79,7 @@ taxonomy > term > content
 
 ### 基本配置
 ```
-baseURL = "http://xianjun.me" # 你的域名
+baseURL = "http://xianjun.info" # 你的域名
 languageCode = "zh-Hans" # 语言类型
 defaultContentLanguage = "zh-Hans" # 文章默认的语言类型
 title = "贤军的博客" # 网站标题
