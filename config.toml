@@ -1,7 +1,7 @@
-baseURL = "http://xianjun.me"
+baseURL = "//xianjun.info"
 languageCode = "zh"
 defaultContentLanguage = "zh"
-title = "贤军的博客"
+title = " lewis blog"
 theme = ["docsy-modify", "docsy"]
 
 hasCJKLanguage = true
