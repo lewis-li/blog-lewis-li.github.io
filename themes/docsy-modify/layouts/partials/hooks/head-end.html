@@ -7,6 +7,7 @@
 {{ $customCSS := resources.Get $customSCSS | toCSS (dict "enableSourceMap" false) | postCSS | minify | fingerprint }}
 <link rel="preload" href="{{ $customCSS.RelPermalink }}" as="style">
 <link href="{{ $customCSS.RelPermalink }}" rel="stylesheet" integrity="{{ $customCSS.Data.integrity }}">
-{{ $fontawesomeSCSS := "style/fontawesome/v5.9.0/css/all.css"}}
-{{ $fontawesomeSCSS := resources.Get $fontawesomeSCSS (dict "enableSourceMap" false) | postCSS | minify | fingerprint }}
-<link href="{{ $fontawesomeSCSS }}" rel="stylesheet">
+
+{{ $fontawesomeSCSS := resources.Get "style/fontawesome/5.9.0/css/all.css" | minify | fingerprint }}
+<link rel="preload" href="{{ $fontawesomeSCSS }}" rel="stylesheet">
+<link href="{{ $fontawesomeSCSS.RelPermalink }}" rel="stylesheet" integrity="{{ $fontawesomeSCSS.Data.integrity }}">

@@ -1,0 +1,7 @@
+{{ $jquery := resources.Get "js/jquery-3.3.1.min.js" }}
+<script src="{{ $jquery.RelPermalink }}"></script>
+{{ if .Site.Params.offlineSearch }}
+{{ $lunr := resources.Get "js/lunr-2.3.8.js" }}
+<script src="{{ $lunr.RelPermalink }}"></script>
+{{end}}
+{{ partial "hooks/head-end.html" . }}
